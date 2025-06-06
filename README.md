@@ -47,91 +47,61 @@ This project implements a full compiler pipeline for SPL (Simple Programming Lan
 * Output matches reference IR structure from solution.
 
 ## How to Run
-
-### The Test Cases in our code 
-'2d_array'
-'8q'
-'factorial'
-'fib'
-'hanoi'
-'hello'
-'prime'
-'sort'
-'square'
-'test1'
-'test2'
-'test3'
-'test4'
-'tree'
-'tsort'
-'*' (Used to run all the test cases.
-
 ### Compile
 
 ```bash
 mvn clean install
 ```
 
-### Run Scanner (Task 1)
+
+## Test Cases
+
+The compiler was validated against a suite of SPL programs located in the `tests/` directory. Each file demonstrates different language features and edge cases. You can run individual tests or the entire suite.
+
+### Available Test Cases
+
+- `2d_array`
+- `8q` 
+- `factorial`
+- `fib` 
+- `hanoi` 
+- `hello` 
+- `prime`
+- `sort`
+- `square`
+- `test1`
+- `test2`
+- `test3`
+- `test4`
+- `tree`
+- `tsort`
+
+###  Run a Single Test
 
 ```bash
-scala lib/spl.jar 1 tests/[TestCase].spl
+scala lib/spl.jar <task_number> tests/factorial.spl
 ```
--** To check all test cases, run the following**
+### Run All Tests
 ```bash
-scala lib/spl.jar 1 tests/*.spl
+scala lib/spl.jar <task_number> tests/*.spl
 ```
+Replace <task_number> with:
 
-### Run Parser (Task 2)
+1 – Scanner
 
+2 – Parser
+
+3 – AST Generator
+
+4 – Type Checker
+
+5 – IR Generator
+
+### Compare With Reference Solution
 ```bash
-scala lib/spl.jar 2 tests/[TestCase].spl
+scala spl-solution.jar <task_number> tests/<test_case>.spl
 ```
 
-### Run AST Generation (Task 3)
-
-```bash
-scala lib/spl.jar 3 tests/[TestCase].spl
-```
-
-### Run Type Checking (Task 4)
-
-```bash
-scala lib/spl.jar 4 tests/[TestCase].spl
-```
-
-### Run IR Generation (Task 5)
-
-```bash
-scala lib/spl.jar 5 tests/[TestCase].spl
-```
-
-
-### Compare Output with Reference
-
-```bash
-scala spl-solution.jar [Task#] tests/[TestCase].spl
-```
-### Example (Task 4, All Test Cases)
-```bash
-scala lib/spl.jar 4 tests/*.spl
-```
-
-
-### Example Solution (Task 4, All Test Cases)
-```bash
-scala spl-solution.jar 4 tests/*.spl
-```
-
-### Example (Task 3, 2d_array Test Case)
-```bash
-scala lib/spl.jar 3 tests/2d_array.spl
-```
-
-### Example Solution (Task 3, 2d_array Test Case)
-```bash
-scala spl-solution.jar 3 tests/2d_array.spl
-```
 
 ## Directory Structure
 
