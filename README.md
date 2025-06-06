@@ -58,7 +58,7 @@ mvn clean install
 
 The compiler was validated against a suite of SPL programs located in the `tests/` directory. Each file demonstrates different language features and edge cases. You can run individual tests or the entire suite.
 
-### Available Test Cases
+## Available Test Cases
 
 - `2d_array`
 - `8q` 
